@@ -7,11 +7,9 @@ import Dependancy.pets.PetServiceFactory;
 import Dependancy.sfgdi.repositories.EnglishGreetingRepository;
 import Dependancy.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import Dependancy.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -20,16 +18,18 @@ public class GreetingServiceConfig {
     PrimaryGreetingService primaryGreetingService() {
         return new PrimaryGreetingService();
     }
-
-    @Bean
+//uncomment this if you want to not use xml configuration
+   /* @Bean
     ConstructorGreetingService constructorGreetingService() {
         return new ConstructorGreetingService();
     }
+*/
 
-    @Bean
+    //uncomment this if you want to not use xml configuration
+  /*  @Bean
     PropertyInjectedGreetingService propertyInjectedGreetingService() {
         return new PropertyInjectedGreetingService();
-    }
+    }*/
 
     @Bean
     SetterGreetingInjectedService setterGreetingInjectedService() {
