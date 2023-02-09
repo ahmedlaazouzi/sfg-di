@@ -2,6 +2,7 @@ package Dependancy.sfgdi;
 
 import Dependancy.sfgdi.controllers.PetController;
 import Dependancy.sfgdi.controllers.*;
+import Dependancy.sfgdi.dataSource.FakeDataSource;
 import Dependancy.sfgdi.services.PrototypeBean;
 import Dependancy.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -45,11 +46,16 @@ public class SfgDiApplication {
 		SingletonBean singletonBean1= ctx.getBean(SingletonBean.class);
 		System.out.println("++++++++++++"+singletonBean1.getMyScope());
 		SingletonBean singletonBean2= ctx.getBean(SingletonBean.class);
-		System.out.println("++++++++++++"+singletonBean1.getMyScope());
+		System.out.println("++++++++++++"+singletonBean2.getMyScope());
 		PrototypeBean prototypeBean1= ctx.getBean(PrototypeBean.class);
 		System.out.println("------------"+prototypeBean1.getMyScope());
 		PrototypeBean PrototypeBean2= ctx.getBean(PrototypeBean.class);
 		System.out.println("------------"+PrototypeBean2.getMyScope());
+
+
+		System.out.println("--------------------------Prpperties data sources------------------------------");
+		FakeDataSource fakeDataSource =ctx.getBean(FakeDataSource.class);
+		System.out.println(" password="+fakeDataSource.getPassword()+"username="+fakeDataSource.getUserName()+"url="+fakeDataSource.getJdbcurl());
 
 
 	}
