@@ -10,7 +10,8 @@ import Dependancy.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import Dependancy.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
-@PropertySource("classpath:datasource.properties")
+//uncomment this line if you want to use datasource.properties file and copy/paste from applications pertires file
+//@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {

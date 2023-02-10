@@ -55,7 +55,9 @@ public class SfgDiApplication {
 
 		System.out.println("--------------------------Prpperties data sources------------------------------");
 		FakeDataSource fakeDataSource =ctx.getBean(FakeDataSource.class);
-		System.out.println(" password="+fakeDataSource.getPassword()+"username="+fakeDataSource.getUserName()+"url="+fakeDataSource.getJdbcurl());
+		System.out.println(" password="+fakeDataSource.getPassword());
+		System.out.println("username="+fakeDataSource.getUserName());
+		System.out.println("url="+fakeDataSource.getJdbcurl());
 
 
 	}

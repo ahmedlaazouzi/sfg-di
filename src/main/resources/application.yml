@@ -1,0 +1,8 @@
+spring:
+      profiles:
+           active: En,cat
+
+br:
+  username: usernameYml
+  password: passwordYml
+  jdbcurl: urlbdYml
